@@ -314,3 +314,29 @@ window.onclick = function (event) {
     document.getElementById('acc-panel').classList.add('hidden');
   }
 };
+
+function fixMobileView() {
+    const width = window.innerWidth;
+    const cards = document.querySelectorAll('.menu-card, .card');
+    const container = document.querySelector('.menu-container, .grid-layout');
+
+    if (width <= 768) {
+        // إجبار الحاوية تصير عمود واحد
+        if (container) {
+            container.style.display = 'flex';
+            container.style.direction = 'ltr'; // عشان المنيو يترتب صح
+            container.style.flexDirection = 'column';
+            container.style.alignItems = 'center';
+        }
+
+        // إجبار الكروت تاخذ عرض الشاشة
+        cards.forEach(card => {
+            card.style.width = '90%';
+            card.style.margin = '10px auto';
+        });
+    }
+}
+
+// تشغيل الفانكشن عند تحميل الصفحة وعند تغيير حجم الشاشة
+window.addEventListener('load', fixMobileView);
+window.addEventListener('resize', fixMobileView);
