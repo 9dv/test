@@ -1264,3 +1264,51 @@ h3 {
         display: none;
     }
 }
+
+/* كود التجاوب النهائي - يضمن الشغل على iPhone و Android */
+@media screen and (max-width: 768px) {
+    
+    /* 1. تصفير المسافات وضمان عدم خروج العناصر عن الشاشة */
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* 2. تحويل الهيدر واللوجو لترتيب عمودي */
+    header, .nav-container {
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 10px 0 !important;
+    }
+
+    /* 3. تطبيق Column Count المطلوبة في المشروع (عمود واحد للموبايل) */
+    /* استبدل .content-section باسم الكلاس اللي فيه نصوص المنيو أو المقالات */
+    .content-section, .gallery-container {
+        column-count: 1 !important; 
+        width: 100% !important;
+    }
+
+    /* 4. كروت المنيو: تترتب تحت بعض بشكل مرتب */
+    .menu-container, .grid-layout {
+        display: block !important; /* يلغي الـ Grid أو الـ Flex ويخليهم تحت بعض */
+        padding: 15px !important;
+    }
+
+    .menu-card, .card {
+        width: 95% !important; /* ياخذ عرض الشاشة مع ترك مسافة بسيطة */
+        margin: 0 auto 20px auto !important;
+        display: block !important;
+    }
+
+    /* 5. تصغير الصور لتناسب الشاشة */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* 6. تصغير الخطوط الكبيرة */
+    h1 {
+        font-size: 2rem !important;
+    }
+}
