@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- =================================================
+                      PAGE ICON
+  ================================================== -->
+                     
+          <link rel="icon" type="image/png" href="imges/logo.png">
+
+
+  <!-- ===== BASIC META TAGS ===== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== PAGE TITLE & DESCRIPTION ===== -->
+  <title>Wingman Bahrain | Locations</title>
+  <meta
+    name="description"
+    content="Find Wingman Bahrain branches, opening hours and contact details."
+  />
+
+  <!-- ===== STYLES & SCRIPTS ===== -->
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+
+<body data-page="locations">
+
+
+
+<!-- =================================================
+     HEADER: Logo + Navigation + Accessibility + Actions
+================================================== -->
+<header class="site-header">
+  <div class="container header-inner">
+
+    <!-- Logo -->
+    <div class="logo" aria-label="Wingman Bahrain logo">
+      <img id="logo" src="imges/logo.png" alt="Wingman Bahrain logo">
+     
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="offers.html">Offers</a></li>
+        <li><a href="locations.html" class="active">Locations</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+
+        <!-- Accessibility tools button -->
+        <li class="accessibility-container">
+          <button id="acc-toggle-btn" class="acc-main-btn">
+            Accessibility ♿
+          </button>
+
+          <!-- Accessibility panel -->
+          <div id="acc-panel" class="acc-panel hidden">
+
+            <!-- Panel header -->
+            <div class="acc-header">
+              <h3>Accessibility Adjustments</h3>
+              <button onclick="resetSettings()" class="reset-btn">
+                Reset Settings
+              </button>
+            </div>
+
+            <!-- Panel body -->
+            <div class="acc-body">
+
+              <!-- Text color adjustments -->
+              <p class="section-title">Adjust Text Colors</p>
+              <div class="color-adjustment-card">
+                <div class="color-circles">
+                  <div class="circle blue" onclick="changeColor('#0084ff')"></div>
+                  <div class="circle purple" onclick="changeColor('#a333c8')"></div>
+                  <div class="circle red" onclick="changeColor('#ff0000')"></div>
+                  <div class="circle orange" onclick="changeColor('#ff6600')"></div>
+                  <div class="circle green" onclick="changeColor('#28a745')"></div>
+                  <div class="circle black" onclick="changeColor('#000000')"></div>
+                </div>
+                <small onclick="changeColor('')" style="cursor:pointer;">
+                  Cancel / Default
+                </small>
+              </div>
+
+              <!-- Font size controls -->
+              <p class="section-title">Content Scaling</p>
+              <div class="content-grid">
+                <div class="grid-item" onclick="stepFontSize(-1)">
+                  <span class="icon">A-</span>
+                  <small>Smaller</small>
+                </div>
+                <div class="grid-item" onclick="resetFontSize()">
+                  <span class="icon">Default</span>
+                  <small>100%</small>
+                </div>
+                <div class="grid-item" onclick="stepFontSize(1)">
+                  <span class="icon">A+</span>
+                  <small>Bigger</small>
+                </div>
+              </div>
+
+              <!-- Visual accessibility aids -->
+              <p class="section-title">Visual Aids</p>
+
+              <div class="profile-item">
+                <label class="switch">
+                  <input type="checkbox" id="title-highlight-toggle">
+                  <span class="slider"></span>
+                </label>
+                <div class="profile-text">
+                  <strong>Highlight Titles</strong>
+                  <small>Add borders to headings</small>
+                </div>
+              </div>
+
+              <div class="profile-item">
+                <label class="switch">
+                  <input type="checkbox" id="link-highlight-toggle">
+                  <span class="slider"></span>
+                </label>
+                <div class="profile-text">
+                  <strong>Highlight Links</strong>
+                  <small>Highlight all clickable links</small>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header action buttons -->
+    <div class="header-actions">
+      <button class="btn btn-outline" id="themeToggle">Dark mode</button>
+      <a href="menu.html" class="btn btn-primary cart-link">
+        Cart <span id="cartCount">0</span>
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<!-- =================================================
+     MAIN CONTENT
+================================================== -->
+<main>
+
+  <!-- ===== PAGE TITLE ===== -->
+  <section class="section">
+    <div class="container">
+
+      <header class="section-header">
+        <h1>Our Locations</h1>
+        <p>Find the closest Wingman branch near you.</p>
+      </header>
+
+      <!-- ===== LOCATIONS LIST GRID ===== -->
+      <div class="locations-layout">
+
+        <!-- Left column locations -->
+        <ul class="locations-list">
+          <li class="card location-card">
+            <h2>Manama</h2>
+            <p><strong>Opening Hours:</strong> 10:00 AM – 12:00 AM</p>
+            <p><strong>Phone:</strong> +973 1234 5678</p>
+          </li>
+
+          <li class="card location-card">
+            <h2>Juffair</h2>
+            <p><strong>Opening Hours:</strong> 10:00 AM – 1:00 AM</p>
+            <p><strong>Phone:</strong> +973 2345 6789</p>
+          </li>
+
+          <li class="card location-card">
+            <h2>Muharraq</h2>
+            <p><strong>Opening Hours:</strong> 10:00 AM – 12:00 AM</p>
+            <p><strong>Phone:</strong> +973 3456 7890</p>
+          </li>
+        </ul>
+
+        <!-- Right column locations -->
+        <ul class="locations-list">
+          <li class="card location-card">
+            <h2>Seef District</h2>
+            <p><strong>Opening Hours:</strong> 11:00 AM – 12:00 AM</p>
+            <p><strong>Phone:</strong> +973 4567 8910</p>
+          </li>
+
+          <li class="card location-card">
+            <h2>Riffa</h2>
+            <p><strong>Opening Hours:</strong> 10:00 AM – 11:00 PM</p>
+            <p><strong>Phone:</strong> +973 5678 9101</p>
+          </li>
+
+          <li class="card location-card">
+            <h2>Amwaj Islands</h2>
+            <p><strong>Opening Hours:</strong> 12:00 PM – 1:00 AM</p>
+            <p><strong>Phone:</strong> +973 6789 1011</p>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAP SECTION ===== -->
+  <section class="location-map fade-anim">
+    <iframe
+      src="https://www.google.com/maps?q=Bahrain&output=embed"
+      loading="lazy">
+    </iframe>
+  </section>
+
+  <!-- ===== INFO & FAQ SECTIONS ===== -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Branch features -->
+      <section class="section fade-anim section-info">
+        <h2>What You Can Find at Our Branches</h2>
+        <p>
+          All Wingman Bahrain branches are designed to provide a comfortable and
+          enjoyable experience whether you choose to dine in, take away, or order online.
+        </p>
+        <ul>
+          <li>Dine-in seating available at selected locations</li>
+          <li>Fast takeaway service</li>
+          <li>Online ordering and delivery support</li>
+          <li>Consistent menu and quality across all branches</li>
+        </ul>
+      </section>
+
+      <!-- Delivery info -->
+      <section class="section fade-anim section-info">
+        <h2>Delivery & Pickup</h2>
+        <p>
+          Our branches support delivery and pickup services to make ordering quick
+          and convenient. Delivery availability may vary based on your location.
+        </p>
+      </section>
+
+      <!-- FAQ cards -->
+      <section class="section fade-anim section-info">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="card-grid">
+          <article class="card">
+            <h3>Do all branches offer the same menu?</h3>
+            <p>Yes, all Wingman Bahrain branches follow the same core menu.</p>
+          </article>
+
+          <article class="card">
+            <h3>Is online ordering available for all locations?</h3>
+            <p>Online ordering is available for most locations.</p>
+          </article>
+
+          <article class="card">
+            <h3>Can I pick up my order in person?</h3>
+            <p>Yes, customers can choose pickup when placing an order online.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="section fade-anim" style="text-align:center;">
+        <h2>Find Your Nearest Branch</h2>
+        <p>Use our map above to locate the closest Wingman Bahrain branch.</p>
+        <br>
+        <a
+          href="https://www.google.com/maps/search/Wingman+Bahrain"
+          class="btn btn-primary"
+          target="_blank">
+          Find your nearest branch
+        </a>
+      </section>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- =================================================
+     FOOTER
+================================================== -->
+<footer class="site-footer">
+  <div class="container footer-inner footer-simple">
+
+    <!-- Contact info -->
+    <div class="footer-contact">
+      <h4>Contact Information</h4>
+      <p><strong>Address:</strong> Manama, Bahrain</p>
+      <p><strong>Email:</strong> info@wingmanbh.com</p>
+      <p><strong>Phone:</strong> +973 1234 5678</p>
+    </div>
+
+    <!-- Social links -->
+    <div class="footer-social-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/wingman_bh/?hl=en">
+          <img src="imges/instagram logo.png" alt="Instagram" width="36">
+        </a>
+        <a href="https://www.facebook.com/wingmanbh/">
+          <img src="imges/facebook logo.png" alt="Facebook" width="36">
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Wingman Bahrain. All rights reserved.</p>
+  </div>
+
+  <!-- Scroll to top -->
+  <button id="scrollTopBtn">↑</button>
+</footer>
+
+</body>
+</html>

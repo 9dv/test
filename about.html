@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== BASIC META TAGS ===== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== PAGE TITLE & DESCRIPTION ===== -->
+  <title>Wingman Bahrain | About Us</title>
+  <meta
+    name="description"
+    content="Learn more about Wingman Bahrain, our story, mission, values, culture, and future vision."
+  />
+<!-- =================================================
+                      PAGE ICON
+  ================================================== -->
+                     
+          <link rel="icon" type="image/png" href="imges/logo.png">
+
+  <!-- ===== STYLESHEET & MAIN SCRIPT ===== -->
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+
+<body data-page="about">
+
+
+
+
+  
+<!-- =================================================
+     HEADER SECTION
+     Logo + Navigation + Accessibility + Actions
+================================================== -->
+<header class="site-header">
+  <div class="container header-inner">
+
+    <!-- Logo -->
+    <div class="logo" aria-label="Wingman Bahrain logo">
+      <img id="logo" src="imges/logo.png" alt="Wingman Bahrain logo">
+      
+    </div>
+
+    <!-- Main navigation bar -->
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="offers.html">Offers</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+
+        <!-- Accessibility button and its control panel -->
+        <li class="accessibility-container">
+          <button id="acc-toggle-btn" class="acc-main-btn">
+            Accessibility ♿
+          </button>
+
+          <!-- Accessibility settings panel -->
+          <div id="acc-panel" class="acc-panel hidden">
+
+            <!-- Panel header -->
+            <div class="acc-header">
+              <h3>Accessibility Adjustments</h3>
+              <button onclick="resetSettings()" class="reset-btn">
+                Reset Settings
+              </button>
+            </div>
+
+            <!-- Panel body -->
+            <div class="acc-body">
+
+              <!-- Text color adjustments -->
+              <p class="section-title">Adjust Text Colors</p>
+              <div class="color-adjustment-card">
+                <div class="color-circles">
+                  <div class="circle blue" onclick="changeColor('#0084ff')"></div>
+                  <div class="circle purple" onclick="changeColor('#a333c8')"></div>
+                  <div class="circle red" onclick="changeColor('#ff0000')"></div>
+                  <div class="circle orange" onclick="changeColor('#ff6600')"></div>
+                  <div class="circle green" onclick="changeColor('#28a745')"></div>
+                  <div class="circle black" onclick="changeColor('#000000')"></div>
+                </div>
+                <small onclick="changeColor('')" style="cursor:pointer; display:block; margin-top:5px; color:#007bff;">
+                  Cancel / Default
+                </small>
+              </div>
+
+              <!-- Font size controls -->
+              <p class="section-title">Content Scaling</p>
+              <div class="content-grid">
+                <div class="grid-item" onclick="stepFontSize(-1)">
+                  <span class="icon">A-</span>
+                  <small>Smaller</small>
+                </div>
+                <div class="grid-item" onclick="resetFontSize()">
+                  <span class="icon">Default</span>
+                  <small>100%</small>
+                </div>
+                <div class="grid-item" onclick="stepFontSize(1)">
+                  <span class="icon">A+</span>
+                  <small>Bigger</small>
+                </div>
+              </div>
+
+              <!-- Visual aids -->
+              <p class="section-title">Visual Aids</p>
+
+              <div class="profile-item">
+                <label class="switch">
+                  <input type="checkbox" id="title-highlight-toggle">
+                  <span class="slider"></span>
+                </label>
+                <div class="profile-text">
+                  <strong>Highlight Titles</strong>
+                  <small>Add borders to headings</small>
+                </div>
+              </div>
+
+              <div class="profile-item">
+                <label class="switch">
+                  <input type="checkbox" id="link-highlight-toggle">
+                  <span class="slider"></span>
+                </label>
+                <div class="profile-text">
+                  <strong>Highlight Links</strong>
+                  <small>Highlight all clickable links</small>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header action buttons -->
+    <div class="header-actions">
+      <button class="btn btn-outline" id="themeToggle">Dark mode</button>
+      <a href="menu.html" class="btn btn-primary cart-link">
+        Cart <span id="cartCount">0</span>
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<!-- =================================================
+     MAIN ABOUT PAGE CONTENT
+================================================== -->
+<main class="section about-section">
+  <div class="container about-page">
+
+    <!-- About content wrapper -->
+    <section class="about-content fade-anim">
+
+      <!-- Page title -->
+      <h1>About Wingman Bahrain</h1>
+
+      <!-- Brand story -->
+      <div class="about-columns">
+        <p>Wingman Bahrain is a fast‑casual restaurant brand dedicated to delivering bold, flavour‑packed chicken wings made with high‑quality ingredients.</p>
+        <p>Our journey started with a passion for great food and a vision to create a brand that combines quality, consistency, and convenience.</p>
+        <p>Every wing is cooked to order using carefully selected ingredients and precise preparation techniques.</p>
+      </div>
+
+      <!-- Timeline section -->
+      <section class="about-timeline">
+        <h2>Our Journey</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-year">2019</span>
+            <p>The idea of Wingman Bahrain was born.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2021</span>
+            <p>Expanded menu with signature sauces and new flavours.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2023</span>
+            <p>Opened multiple branches and improved online ordering.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">Today</span>
+            <p>Serving wing lovers across Bahrain every week.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission and vision -->
+      <section class="section fade-anim">
+        <h2>Our Mission & Vision</h2>
+        <br><br>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Our Mission</h3>
+            <p>Deliver great wings that bring people together with consistent quality.</p>
+          </div>
+          <div class="card">
+            <h3>Our Vision</h3>
+            <p>Become Bahrain’s most loved wings brand through innovation and trust.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Values -->
+      <section class="section fade-anim">
+        <h2>What We Stand For</h2>
+        <div class="card-grid">
+          <div class="card"><h3>Quality</h3><p>Fresh ingredients, every order.</p></div>
+          <div class="card"><h3>Consistency</h3><p>Same experience everywhere.</p></div>
+          <div class="card"><h3>Innovation</h3><p>Always improving flavours.</p></div>
+          <div class="card"><h3>Customer Focus</h3><p>Your satisfaction matters.</p></div>
+        </div>
+      </section>
+
+      <!-- Statistics -->
+      <section class="section fade-anim about-stats">
+        <h2>Wingman by the Numbers</h2>
+        <br>
+        <div class="stats-grid">
+          <div class="stat-card"><span class="stat-number">1000+</span><p>Weekly Orders</p></div>
+          <div class="stat-card"><span class="stat-number">10+</span><p>Signature Sauces</p></div>
+          <div class="stat-card"><span class="stat-number">100%</span><p>Quality Commitment</p></div>
+        </div>
+      </section>
+
+      <!-- Team and culture -->
+      <section class="section fade-anim about-team">
+        <h2>Our Team & Culture</h2>
+        <br>
+        <div class="team-grid">
+          <div class="team-card"><h3>Kitchen Team</h3><p>Chefs passionate about flavour and quality.</p></div>
+          <div class="team-card"><h3>Operations</h3><p>Ensuring smooth service and fast delivery.</p></div>
+          <div class="team-card"><h3>Customer Support</h3><p>Always ready to help and improve your experience.</p></div>
+        </div>
+      </section>
+
+      <!-- Accordion sections -->
+      <section class="about-accordion">
+        <button class="accordion-header">Our Brand Promise <span>+</span></button>
+        <div class="accordion-content">
+          <p>At Wingman Bahrain, we promise fresh, flavour‑packed wings prepared with care and delivered with speed.</p>
+        </div>
+      </section>
+
+      <section class="about-accordion">
+        <button class="accordion-header">Community & Responsibility <span>+</span></button>
+        <div class="accordion-content">
+          <p>We proudly support local suppliers and initiatives, believing that strong communities build strong brands.</p>
+        </div>
+      </section>
+
+      <section class="about-accordion">
+        <button class="accordion-header">Customer Experience Philosophy <span>+</span></button>
+        <div class="accordion-content">
+          <p>Every interaction is designed to be smooth, fast, and satisfying.</p>
+        </div>
+      </section>
+
+      <section class="about-accordion">
+        <button class="accordion-header">Looking Ahead <span>+</span></button>
+        <div class="accordion-content">
+          <p>Our future includes new flavours and expansion across Bahrain.</p>
+        </div>
+      </section>
+
+      <!-- Why customers love us -->
+      <section class="about-features fade-anim">
+        <div class="why-text">
+          <h2>Why Customers Love Us</h2>
+          <ul>
+            <li>Fresh wings cooked to order</li>
+            <li>Variety of flavours and spice levels</li>
+            <li>Fast online ordering and delivery</li>
+            <li>Consistent quality across branches</li>
+          </ul>
+        </div>
+        <div class="why-image">
+          <img src="imges/restrunt.jpeg" alt="Wingman signature wings">
+        </div>
+      </section>
+
+    </section>
+  </div>
+</main>
+
+<!-- =================================================
+     FOOTER
+================================================== -->
+<footer class="site-footer">
+  <div class="container footer-inner footer-simple">
+
+    <!-- Contact information -->
+    <div class="footer-contact">
+      <h4>Contact Information</h4>
+      <p><strong>Address:</strong> Manama, Bahrain</p>
+      <p><strong>Email:</strong> info@wingmanbh.com</p>
+      <p><strong>Phone:</strong> +973 1234 5678</p>
+    </div>
+
+    <!-- Social media -->
+    <div class="footer-social-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/wingman_bh/?hl=en">
+          <img src="imges/instagram logo.png" alt="Instagram" width="36">
+        </a>
+        <a href="https://www.facebook.com/wingmanbh/">
+          <img src="imges/facebook logo.png" alt="Facebook" width="36">
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer bottom text -->
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Wingman Bahrain. All rights reserved.</p>
+  </div>
+
+  <!-- Scroll to top button -->
+  <button id="scrollTopBtn">↑</button>
+</footer>
+
+</body>
+</html>

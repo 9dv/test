@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== BASIC META TAGS ===== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== PAGE TITLE & DESCRIPTION ===== -->
+  <title>Wingman Bahrain | Contact Us</title>
+  <meta
+    name="description"
+    content="Contact Wingman Bahrain for questions, feedback or support."
+  />
+
+  <!-- =================================================
+                      PAGE ICON
+  ================================================== -->
+                     
+          <link rel="icon" type="image/png" href="imges/logo.png">
+
+
+  <!-- ===== STYLESHEET & MAIN SCRIPT ===== -->
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+
+<body data-page="contact">
+
+
+
+
+  
+<!-- =================================================
+     HEADER SECTION
+     Logo + Navigation + Accessibility + Actions
+================================================== -->
+<header class="site-header">
+  <div class="container header-inner">
+
+    <!-- Logo -->
+    <div class="logo" aria-label="Wingman Bahrain logo">
+      <img id="logo" src="imges/logo.png" alt="Wingman Bahrain logo">
+     
+    </div>
+
+    <!-- Main navigation -->
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="offers.html">Offers</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+
+        <!-- Accessibility tools button -->
+        <li class="accessibility-container">
+          <button id="acc-toggle-btn" class="acc-main-btn">
+            Accessibility ♿
+          </button>
+
+          <!-- Accessibility settings panel -->
+          <div id="acc-panel" class="acc-panel hidden">
+
+            <!-- Panel header -->
+            <div class="acc-header">
+              <h3>Accessibility Adjustments</h3>
+              <button onclick="resetSettings()" class="reset-btn">
+                Reset Settings
+              </button>
+            </div>
+
+            <!-- Panel body -->
+            <div class="acc-body">
+
+              <!-- Text color adjustment -->
+              <p class="section-title">Adjust Text Colors</p>
+              <div class="color-adjustment-card">
+                <div class="color-circles">
+                  <div class="circle blue" onclick="changeColor('#0084ff')"></div>
+                  <div class="circle purple" onclick="changeColor('#a333c8')"></div>
+                  <div class="circle red" onclick="changeColor('#ff0000')"></div>
+                  <div class="circle orange" onclick="changeColor('#ff6600')"></div>
+                  <div class="circle green" onclick="changeColor('#28a745')"></div>
+                  <div class="circle black" onclick="changeColor('#000000')"></div>
+                </div>
+                <small onclick="changeColor('')" style="cursor:pointer;">
+                  Cancel / Default
+                </small>
+              </div>
+
+              <!-- Content scaling -->
+              <p class="section-title">Content Scaling</p>
+              <div class="content-grid">
+                <div class="grid-item" onclick="stepFontSize(-1)">
+                  <span class="icon">A-</span>
+                  <small>Smaller</small>
+                </div>
+                <div class="grid-item" onclick="resetFontSize()">
+                  <span class="icon">Default</span>
+                  <small>100%</small>
+                </div>
+                <div class="grid-item" onclick="stepFontSize(1)">
+                  <span class="icon">A+</span>
+                  <small>Bigger</small>
+                </div>
+              </div>
+
+              <!-- Visual aids -->
+              <p class="section-title">Visual Aids</p>
+
+              <div class="profile-item">
+                <label class="switch">
+                  <input type="checkbox" id="title-highlight-toggle">
+                  <span class="slider"></span>
+                </label>
+                <div class="profile-text">
+                  <strong>Highlight Titles</strong>
+                  <small>Add borders to headings</small>
+                </div>
+              </div>
+
+              <div class="profile-item">
+                <label class="switch">
+                  <input type="checkbox" id="link-highlight-toggle">
+                  <span class="slider"></span>
+                </label>
+                <div class="profile-text">
+                  <strong>Highlight Links</strong>
+                  <small>Highlight all clickable links</small>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header action buttons -->
+    <div class="header-actions">
+      <button class="btn btn-outline" id="themeToggle">Dark mode</button>
+      <a href="menu.html" class="btn btn-primary cart-link">
+        Cart <span id="cartCount">0</span>
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<!-- =================================================
+     MAIN CONTACT CONTENT
+================================================== -->
+<main class="section">
+  <div class="container contact-layout">
+
+    <!-- Contact form -->
+    <section class="left-side fade-anim" aria-labelledby="contactHeading">
+      <h1 id="contactHeading">Contact Us</h1>
+      <p>
+        Have a question about your order or our menu?
+        Send us a message and we’ll get back to you as soon as possible.
+      </p>
+
+      <!-- Contact form fields -->
+      <form id="contactForm" novalidate>
+
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
+          <small class="error-message"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+          <small class="error-message"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <small class="error-message"></small>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p id="formSuccess" class="form-success"></p>
+      </form>
+    </section>
+
+    <!-- Branch contact details -->
+    <aside class="right-side fade-anim">
+      <div class="contact-details">
+        <h2>Branch Contact</h2>
+        <p><strong>Address:</strong> Manama, Bahrain</p>
+        <p><strong>Phone:</strong> +973 1234 5678</p>
+        <p><strong>Email:</strong> info@wingmanbh.com</p>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Support information -->
+  <section class="contact-text">
+    <h2>How Can We Help You?</h2>
+  </section>
+
+  <section class="section fade-anim container">
+    <div class="card-grid">
+      <div class="card"><h3>Order Support</h3><p>Help with orders and delivery issues.</p></div>
+      <div class="card"><h3>Menu & Allergies</h3><p>Ingredients and dietary information.</p></div>
+      <div class="card"><h3>Feedback</h3><p>Share your experience with us.</p></div>
+      <div class="card"><h3>Business Enquiries</h3><p>Partnership and catering opportunities.</p></div>
+    </div>
+  </section>
+
+  <!-- Business hours -->
+  <section class="contact-text">
+    <h2>Business Hours</h2>
+    <p>
+      <strong>Saturday – Thursday:</strong> 12:00 PM – 12:00 AM<br>
+      <strong>Friday:</strong> 2:00 PM – 1:00 AM
+    </p>
+  </section>
+
+  <!-- FAQ section -->
+  <section class="contact-text">
+    <h2>Frequently Asked Questions</h2>
+  </section>
+
+  <section class="section fade-anim container faq-accordion">
+    <div class="faq-item">
+      <input type="checkbox" id="faq1">
+      <label for="faq1">How long does delivery take?</label>
+      <div class="faq-answer">Delivery usually takes 30–45 minutes.</div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq2">
+      <label for="faq2">Can I change my order after submitting?</label>
+      <div class="faq-answer">Changes can be requested shortly after ordering.</div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq3">
+      <label for="faq3">Do you offer spicy options?</label>
+      <div class="faq-answer">Yes, several spice levels are available.</div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="contact-text">
+    <h2>Still Have Questions?</h2>
+    <p>
+      Our team is always ready to help.
+      Reach out using the form above and we’ll respond as soon as possible.
+    </p>
+  </section>
+
+</main>
+
+<!-- =================================================
+     FOOTER
+================================================== -->
+<footer class="site-footer">
+  <div class="container footer-inner footer-simple">
+
+    <!-- Contact info -->
+    <div class="footer-contact">
+      <h4>Contact Information</h4>
+      <p><strong>Address:</strong> Manama, Bahrain</p>
+      <p><strong>Email:</strong> info@wingmanbh.com</p>
+      <p><strong>Phone:</strong> +973 1234 5678</p>
+    </div>
+
+    <!-- Social media -->
+    <div class="footer-social-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/wingman_bh/?hl=en">
+          <img src="imges/instagram logo.png" alt="Instagram" width="36">
+        </a>
+        <a href="https://www.facebook.com/wingmanbh/">
+          <img src="imges/facebook logo.png" alt="Facebook" width="36">
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Wingman Bahrain. All rights reserved.</p>
+  </div>
+
+  <button id="scrollTopBtn">↑</button>
+</footer>
+
+</body>
+</html>
