@@ -1225,3 +1225,42 @@ h3 {
     font-size: clamp(2rem, 6vw, 3rem);
 }
 
+/* كود التجاوب مع التلفون - Mobile Responsive */
+@media screen and (max-width: 600px) {
+    
+    /* يخلي الهيدر واللوجو يترتبون بشكل عمودي */
+    header, nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    /* يخلي المنيو وكروت الطعام تصير سطر واحد (عمود واحد) */
+    .menu-container, .grid-layout { 
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* يخلي الكارت ياخذ عرض الشاشة كامل */
+    .menu-card, .card {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+
+    /* تصغير حجم الخطوط عشان تناسب الشاشة الصغيرة */
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    /* ميزة Column Count المطلوبة في المشروع: 
+       تخلي النص عمود واحد في التلفون (iPhone) */
+    .text-section {
+        column-count: 1 !important;
+    }
+
+    /* إخفاء العناصر التي لا نحتاجها في التلفون (Display: none) المطلوبة */
+    .desktop-only {
+        display: none;
+    }
+}
