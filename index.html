@@ -1,45 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ===== BASIC META TAGS ===== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ===== PAGE TITLE & SEO ===== -->
   <title>Wingman Bahrain | Online Chicken Wings Delivery</title>
-  <meta name="description"
-        content="Order crispy chicken wings, combos and sides online from Wingman Bahrain." />
-  <meta name="keywords"
-        content="Wingman Bahrain, chicken wings, food delivery, Bahrain restaurant" />
-            
-        
-        <!-- =================================================
-                      PAGE ICON
-  ================================================== -->
-                     
-          <link rel="icon" type="image/png" href="imges/logo.png">
+  <meta name="description" content="Order crispy chicken wings, combos and sides online from Wingman Bahrain." />
+  <meta name="keywords" content="Wingman Bahrain, chicken wings, food delivery, Bahrain restaurant" />
+  
+  <link rel="icon" type="image/png" href="imges/logo.png">
 
-
-  <!-- ===== STYLES & SCRIPTS ===== -->
   <link rel="stylesheet" href="styles.css" />
   <script defer src="main.js"></script>
+
+  <style>
+    /* التنسيق الأساسي للهيدر (Desktop) */
+    .site-header {
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 10px 20px;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* ==========================================
+       🚀 التعديل فائق النعومة والتصغير للتلفون (Mobile View)
+    ========================================== */
+    @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px; /* تقليل الفراغات */
+        padding: 8px 5px; /* هيدر نحيف جداً */
+      }
+
+      /* تصغير حجم اللوجو في التلفون عشان ما ياخذ مساحة */
+      #logo {
+        max-width: 90px !important; 
+        height: auto;
+      }
+
+      .main-nav {
+        width: 100%;
+      }
+      
+      /* روابط المنيو الأساسية (6 أزرار) */
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px; /* مسافة صغيرة جداً */
+        width: 100%;
+      }
+      .nav-links li {
+        flex: 1 1 calc(33.33% - 6px); /* 3 في كل سطر ميزان */
+        min-width: 65px;
+      }
+      .nav-links a {
+        display: block;
+        padding: 4px 2px; /* تقليل الحشوة داخل الزر */
+        font-size: 11px; /* تصغير الخط */
+        font-weight: 600;
+      }
+
+      /* إخفاء زر الـ Accessibility من المنيو العلوي لعدم الزحمة ونقله مع الأكشنز */
+      .nav-links li.accessibility-container {
+        display: none; 
+      }
+
+      /* تجميع الأزرار الفرعية الثلاثة في سطر واحد صغير وملموم */
+      .header-actions {
+        width: 100%;
+        display: flex;
+        flex-direction: row; /* سطر واحد للأزرار التكميلية */
+        justify-content: center;
+        gap: 6px;
+        margin-top: 4px;
+      }
+      
+      /* تصغير الأزرار الثلاثة (Dark Mode, Accessibility, Cart) */
+      .header-actions .btn, .acc-main-btn-mobile {
+        flex: 1;
+        max-width: 100px; /* حجم صغير جداً وملموم */
+        font-size: 10px !important; /* خط ناعم */
+        padding: 5px 4px !important; /* حشوة خفيفة */
+        text-align: center;
+        white-space: nowrap;
+        border-radius: 4px;
+      }
+      
+      /* زر ذوي الهمم بصيغة مصغرة تناسب السطر الجديد */
+      .acc-main-btn-mobile {
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        font-weight: bold;
+      }
+    }
+
+    /* إخفاء الزر البديل في الديسكتوب */
+    @media (min-width: 769px) {
+      .acc-main-btn-mobile {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body data-page="home">
 
-  <!-- =================================================
-       HEADER: Logo + Navigation + Actions
-  ================================================== -->
   <header class="site-header">
     <div class="container header-inner">
 
-      <!-- Logo Section -->
       <div class="logo" aria-label="Wingman Bahrain logo">
-        <img id="logo" src="imges/logo.png" alt="Wingman Bahrain logo">
-        
+        <img id="logo" src="imges/logo.png" alt="Wingman Bahrain logo" width="120">
       </div>
 
-      <!-- Main Navigation -->
       <nav class="main-nav" aria-label="Main navigation">
         <ul class="nav-links">
           <li><a href="index.html" class="active">Home</a></li>
@@ -49,118 +148,70 @@
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
 
-          <!-- Accessibility tools button (part of navigation) -->
           <li class="accessibility-container">
-            <button id="acc-toggle-btn" class="acc-main-btn">
-              Accessibility ♿
-            </button>
-
-            <!-- Accessibility control panel -->
-            <div id="acc-panel" class="acc-panel hidden">
-
-              <!-- Panel header -->
-              <div class="acc-header">
-                <h3>Accessibility Adjustments</h3>
-                <button onclick="resetSettings()" class="reset-btn">
-                  Reset Settings
-                </button>
-              </div>
-
-              <!-- Panel body -->
-              <div class="acc-body">
-
-                <!-- Text color adjustment -->
-                <p class="section-title">Adjust Text Colors</p>
-                <div class="color-adjustment-card">
-                  <div class="color-circles">
-                    <div class="circle blue" onclick="changeColor('#0084ff')"></div>
-                    <div class="circle purple" onclick="changeColor('#a333c8')"></div>
-                    <div class="circle red" onclick="changeColor('#ff0000')"></div>
-                    <div class="circle orange" onclick="changeColor('#ff6600')"></div>
-                    <div class="circle green" onclick="changeColor('#28a745')"></div>
-                    <div class="circle black" onclick="changeColor('#000000')"></div>
-                  </div>
-                  <small onclick="changeColor('')" style="cursor:pointer;">
-                    Cancel / Default
-                  </small>
-                </div>
-
-                <!-- Font size controls -->
-                <p class="section-title">Content Scaling</p>
-                <div class="content-grid">
-                  <div class="grid-item" onclick="stepFontSize(-1)">
-                    <span class="icon">A-</span>
-                    <small>Smaller</small>
-                  </div>
-                  <div class="grid-item" onclick="resetFontSize()">
-                    <span class="icon">Default</span>
-                    <small>100%</small>
-                  </div>
-                  <div class="grid-item" onclick="stepFontSize(1)">
-                    <span class="icon">A+</span>
-                    <small>Bigger</small>
-                  </div>
-                </div>
-
-                <!-- Visual aids -->
-                <p class="section-title">Visual Aids</p>
-
-                <div class="profile-item">
-                  <label class="switch">
-                    <input type="checkbox" id="title-highlight-toggle">
-                    <span class="slider"></span>
-                  </label>
-                  <div class="profile-text">
-                    <strong>Highlight Titles</strong>
-                    <small>Add borders to headings</small>
-                  </div>
-                </div>
-
-                <div class="profile-item">
-                  <label class="switch">
-                    <input type="checkbox" id="link-highlight-toggle">
-                    <span class="slider"></span>
-                  </label>
-                  <div class="profile-text">
-                    <strong>Highlight Links</strong>
-                    <small>Highlight all clickable links</small>
-                  </div>
-                </div>
-
-              </div>
-            </div>
+            <button id="acc-toggle-btn" class="acc-main-btn">Accessibility ♿</button>
           </li>
         </ul>
       </nav>
 
-      <!-- Header action buttons -->
       <div class="header-actions">
+        <button id="acc-toggle-btn-mobile" class="acc-main-btn-mobile" onclick="document.getElementById('acc-toggle-btn').click();">
+          Access ♿
+        </button>
         <button class="btn btn-outline" id="themeToggle">Dark mode</button>
         <a href="menu.html" class="btn btn-primary cart-link">
           Cart <span id="cartCount">0</span>
         </a>
       </div>
 
+      <div id="acc-panel" class="acc-panel hidden">
+        <div class="acc-header">
+          <h3>Accessibility Adjustments</h3>
+          <button onclick="resetSettings()" class="reset-btn">Reset Settings</button>
+        </div>
+        <div class="acc-body">
+          <p class="section-title">Adjust Text Colors</p>
+          <div class="color-adjustment-card">
+            <div class="color-circles">
+              <div class="circle blue" onclick="changeColor('#0084ff')"></div>
+              <div class="circle purple" onclick="changeColor('#a333c8')"></div>
+              <div class="circle red" onclick="changeColor('#ff0000')"></div>
+              <div class="circle orange" onclick="changeColor('#ff6600')"></div>
+              <div class="circle green" onclick="changeColor('#28a745')"></div>
+              <div class="circle black" onclick="changeColor('#000000')"></div>
+            </div>
+            <small onclick="changeColor('')" style="cursor:pointer;">Cancel / Default</small>
+          </div>
+          <p class="section-title">Content Scaling</p>
+          <div class="content-grid">
+            <div class="grid-item" onclick="stepFontSize(-1)"><span class="icon">A-</span><small>Smaller</small></div>
+            <div class="grid-item" onclick="resetFontSize()"><span class="icon">Default</span><small>100%</small></div>
+            <div class="grid-item" onclick="stepFontSize(1)"><span class="icon">A+</span><small>Bigger</small></div>
+          </div>
+          <p class="section-title">Visual Aids</p>
+          <div class="profile-item">
+            <label class="switch"><input type="checkbox" id="title-highlight-toggle"><span class="slider"></span></label>
+            <div class="profile-text"><strong>Highlight Titles</strong><small>Add borders to headings</small></div>
+          </div>
+          <div class="profile-item">
+            <label class="switch"><input type="checkbox" id="link-highlight-toggle"><span class="slider"></span></label>
+            <div class="profile-text"><strong>Highlight Links</strong><small>Highlight all clickable links</small></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </header>
 
-  <!-- =================================================
-       MAIN CONTENT
-  ================================================== -->
   <main>
-
-    <!-- ===== HERO SECTION ===== -->
     <section class="hero">
       <div class="hero-image">
-        <img src="imges/chiken wings.jpeg"
-             alt="Plate of chicken wings with dipping sauce">
+        <img src="imges/chiken wings.jpeg" alt="Plate of chicken wings with dipping sauce">
       </div>
-
       <div class="container hero-inner">
         <div class="hero-text">
           <h1>Your Favorite Wings in Bahrain</h1>
           <p>Order crispy, saucy chicken wings and combos in just a few clicks.</p>
-
           <div class="hero-actions">
             <a href="menu.html" class="btn btn-primary">Start Your Order</a>
             <a href="offers.html" class="btn btn-primary">View Offers</a>
@@ -169,7 +220,6 @@
       </div>
     </section>
 
-    <!-- ===== VIDEO SECTION ===== -->
     <div class="section-header">
       <h2>Our Wings in Action</h2>
       <p>Watch how we prepare and serve our signature wings.</p>
@@ -178,55 +228,36 @@
     <section class="section">
       <div class="container">
         <div class="card-grid">
-
-          <!-- Video card 1 -->
           <article class="card fade-anim">
-            <video controls width="100%">
-              <source src="video/1.mp4" type="video/mp4">
-            </video>
+            <video controls width="100%"><source src="video/1.mp4" type="video/mp4"></video>
             <p class="center-text">Club Sandwich that hits different</p>
           </article>
-
-          <!-- Video card 2 -->
           <article class="card fade-anim">
-            <video controls width="100%">
-              <source src="video/2.mp4" type="video/mp4">
-            </video>
+            <video controls width="100%"><source src="video/2.mp4" type="video/mp4"></video>
             <p class="center-text">Drip it, love it, eat it</p>
           </article>
-
-          <!-- Video card 3 -->
           <article class="card fade-anim">
-            <video controls width="100%">
-              <source src="video/3.mp4" type="video/mp4">
-            </video>
+            <video controls width="100%"><source src="video/3.mp4" type="video/mp4"></video>
             <p class="center-text">Club Sandwich that hits different</p>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- ===== FEATURED ITEMS ===== -->
     <div class="section-header">
       <h2>Featured Items</h2>
     </div>
 
     <section class="section">
       <div class="container">
-
         <div class="card-grid">
-
-          <!-- Featured item 1 -->
           <article class="card fade-anim">
             <h3>Duo Box</h3>
             <img src="imges/Duo Box.png" alt="Duo Box Meal" class="reflect">
-           <br><br><br> <p>Two-person combo with wings and mini sandwiches.</p>
+            <br><br><br><p>Two-person combo with wings and mini sandwiches.</p>
             <p class="price">BD 5.900</p>
             <button class="btn btn-small add-to-cart">Add to Cart</button>
           </article>
-
-          <!-- Featured item 2 -->
           <article class="card fade-anim">
             <h3>Family Box</h3>
             <img src="imges/Family Box.png" alt="Family Box Meal" class="reflect">
@@ -234,39 +265,26 @@
             <p class="price">BD 13.500</p>
             <button class="btn btn-small add-to-cart">Add to Cart</button>
           </article>
-
-          <!-- Featured item 3 -->
           <article class="card fade-anim">
             <h3>Buffalo Crispy Chicken Sandwich</h3>
-            <img src="imges/Buffalo Crispy Chicken Sandwich.png"
-                 alt="Buffalo Chicken Sandwich"
-                 class="reflect">
+            <img src="imges/Buffalo Crispy Chicken Sandwich.png" alt="Buffalo Chicken Sandwich" class="reflect">
             <p>Crispy chicken dipped in buffalo sauce.</p>
             <p class="price">BD 2.800</p>
             <button class="btn btn-small add-to-cart">Add to Cart</button>
           </article>
-
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- =================================================
-       FOOTER
-  ================================================== -->
   <footer class="site-footer">
     <div class="container footer-inner footer-simple">
-
-      <!-- Contact information -->
       <div class="footer-contact">
         <h4>Contact Information</h4>
         <p><strong>Address:</strong> Manama, Bahrain</p>
         <p><strong>Email:</strong> info@wingmanbh.com</p>
         <p><strong>Phone:</strong> +973 1234 5678</p>
       </div>
-
-      <!-- Social media links -->
       <div class="footer-social-col">
         <h4>Follow Us</h4>
         <div class="footer-social">
@@ -278,19 +296,11 @@
           </a>
         </div>
       </div>
-
     </div>
-
-    <!-- Copyright notice -->
     <div class="footer-bottom">
       <p>© <span id="year"></span> Wingman Bahrain. All rights reserved.</p>
     </div>
-
-    <!-- Scroll to top button -->
     <button id="scrollTopBtn">↑</button>
   </footer>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </body>
 </html>
