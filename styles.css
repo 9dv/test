@@ -1312,3 +1312,41 @@ h3 {
         font-size: 2rem !important;
     }
 }
+
+/* ===============================
+   MOBILE NAVIGATION FIX
+================================ */
+@media (max-width: 768px) {
+
+  /* Stack header items vertically */
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Center logo */
+  .logo {
+    justify-content: center;
+  }
+
+  /* Make nav links wrap nicely */
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  /* Slightly smaller nav buttons */
+  .nav-links a {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* Header action buttons (Dark mode + Cart) */
+  .header-actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+}
